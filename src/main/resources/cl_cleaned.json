@@ -1,0 +1,702 @@
+[
+    {
+        "region_name": "Región Metropolitana",
+        "normalized_name": "region metropolitana",
+        "nro_region": 13,
+        "code_roman": "RM",
+        "cities": [
+            {
+                "name": "Santiago",
+                "normalized_name": "santiago"
+            },
+            {
+                "name": "Casablanca",
+                "normalized_name": "casablanca"
+            },
+            {
+                "name": "Puente Alto",
+                "normalized_name": "puente alto"
+            },
+            {
+                "name": "Maipú",
+                "normalized_name": "maipu"
+            },
+            {
+                "name": "La Florida",
+                "normalized_name": "la florida"
+            },
+            {
+                "name": "San Bernardo",
+                "normalized_name": "san bernardo"
+            },
+            {
+                "name": "Las Condes",
+                "normalized_name": "las condes"
+            },
+            {
+                "name": "Peñalolén",
+                "normalized_name": "penalolen"
+            },
+            {
+                "name": "Quilicura",
+                "normalized_name": "quilicura"
+            },
+            {
+                "name": "La Pintana",
+                "normalized_name": "la pintana"
+            },
+            {
+                "name": "El Bosque",
+                "normalized_name": "el bosque"
+            },
+            {
+                "name": "Melipilla",
+                "normalized_name": "melipilla"
+            },
+            {
+                "name": "Colina",
+                "normalized_name": "colina"
+            },
+            {
+                "name": "Renca",
+                "normalized_name": "renca"
+            },
+            {
+                "name": "Conchalí",
+                "normalized_name": "conchali"
+            },
+            {
+                "name": "La Granja",
+                "normalized_name": "la granja"
+            },
+            {
+                "name": "Macul",
+                "normalized_name": "macul"
+            },
+            {
+                "name": "Lo Barnechea",
+                "normalized_name": "lo barnechea"
+            },
+            {
+                "name": "Espejo",
+                "normalized_name": "espejo"
+            },
+            {
+                "name": "Buin",
+                "normalized_name": "buin"
+            },
+            {
+                "name": "San Ramón",
+                "normalized_name": "san ramon"
+            },
+            {
+                "name": "San Joaquín",
+                "normalized_name": "san joaquin"
+            },
+            {
+                "name": "La Reina",
+                "normalized_name": "la reina"
+            },
+            {
+                "name": "Peñaflor",
+                "normalized_name": "penaflor"
+            },
+            {
+                "name": "Los Cerrillos",
+                "normalized_name": "los cerrillos"
+            },
+            {
+                "name": "Padre Hurtado",
+                "normalized_name": "padre hurtado"
+            },
+            {
+                "name": "Paine",
+                "normalized_name": "paine"
+            },
+            {
+                "name": "Talagante",
+                "normalized_name": "talagante"
+            },
+            {
+                "name": "Lampa",
+                "normalized_name": "lampa"
+            },
+            {
+                "name": "Isla de Maipo",
+                "normalized_name": "isla de maipo"
+            },
+            {
+                "name": "Curacaví",
+                "normalized_name": "curacavi"
+            },
+            {
+                "name": "El Monte",
+                "normalized_name": "el monte"
+            }
+        ]
+    },
+    {
+        "region_name": "Región de Valparaíso",
+        "normalized_name": "region de valparaiso",
+        "nro_region": 5,
+        "code_roman": "V",
+        "cities": [
+            {
+                "name": "Rocas de Santo Domingo",
+                "normalized_name": "rocas de santo domingo"
+            },
+            {
+                "name": "Valparaíso",
+                "normalized_name": "valparaiso"
+            },
+            {
+                "name": "Viña del Mar",
+                "normalized_name": "vina del mar"
+            },
+            {
+                "name": "Quilpué",
+                "normalized_name": "quilpue"
+            },
+            {
+                "name": "Villa Alemana",
+                "normalized_name": "villa alemana"
+            },
+            {
+                "name": "San Antonio",
+                "normalized_name": "san antonio"
+            },
+            {
+                "name": "Quillota",
+                "normalized_name": "quillota"
+            },
+            {
+                "name": "San Felipe",
+                "normalized_name": "san felipe"
+            },
+            {
+                "name": "Los Andes",
+                "normalized_name": "los andes"
+            },
+            {
+                "name": "La Calera",
+                "normalized_name": "la calera"
+            },
+            {
+                "name": "Limache",
+                "normalized_name": "limache"
+            },
+            {
+                "name": "Concón",
+                "normalized_name": "concon"
+            },
+            {
+                "name": "Placilla de Peñuelas",
+                "normalized_name": "placilla de penuelas"
+            },
+            {
+                "name": "Quintero",
+                "normalized_name": "quintero"
+            },
+            {
+                "name": "Cartagena",
+                "normalized_name": "cartagena"
+            },
+            {
+                "name": "Llaillay",
+                "normalized_name": "llaillay"
+            },
+            {
+                "name": "Nogales",
+                "normalized_name": "nogales"
+            },
+            {
+                "name": "La Cruz",
+                "normalized_name": "la cruz"
+            },
+            {
+                "name": "La Ligua",
+                "normalized_name": "la ligua"
+            },
+            {
+                "name": "Hanga Roa",
+                "normalized_name": "hanga roa"
+            }
+        ]
+    },
+    {
+        "region_name": "Región del Biobío",
+        "normalized_name": "region del biobio",
+        "nro_region": 8,
+        "code_roman": "VIII",
+        "cities": [
+            {
+                "name": "Concepción",
+                "normalized_name": "concepcion"
+            },
+            {
+                "name": "Talcahuano",
+                "normalized_name": "talcahuano"
+            },
+            {
+                "name": "Los Ángeles",
+                "normalized_name": "los angeles"
+            },
+            {
+                "name": "Coronel",
+                "normalized_name": "coronel"
+            },
+            {
+                "name": "Chiguayante",
+                "normalized_name": "chiguayante"
+            },
+            {
+                "name": "Penco",
+                "normalized_name": "penco"
+            },
+            {
+                "name": "Lota",
+                "normalized_name": "lota"
+            },
+            {
+                "name": "Tomé",
+                "normalized_name": "tome"
+            },
+            {
+                "name": "Cañete",
+                "normalized_name": "canete"
+            },
+            {
+                "name": "Curanilahue",
+                "normalized_name": "curanilahue"
+            },
+            {
+                "name": "Cabrero",
+                "normalized_name": "cabrero"
+            },
+            {
+                "name": "Mulchén",
+                "normalized_name": "mulchen"
+            },
+            {
+                "name": "Nacimiento",
+                "normalized_name": "nacimiento"
+            },
+            {
+                "name": "Hualqui",
+                "normalized_name": "hualqui"
+            },
+            {
+                "name": "Lebu",
+                "normalized_name": "lebu"
+            },
+            {
+                "name": "Laja",
+                "normalized_name": "laja"
+            }
+        ]
+    },
+    {
+        "region_name": "Región de Coquimbo",
+        "normalized_name": "region de coquimbo",
+        "nro_region": 4,
+        "code_roman": "IV",
+        "cities": [
+            {
+                "name": "La Serena",
+                "normalized_name": "la serena"
+            },
+            {
+                "name": "Coquimbo",
+                "normalized_name": "coquimbo"
+            },
+            {
+                "name": "Ovalle",
+                "normalized_name": "ovalle"
+            },
+            {
+                "name": "Monte Patria",
+                "normalized_name": "monte patria"
+            },
+            {
+                "name": "Vicuña",
+                "normalized_name": "vicuna"
+            },
+            {
+                "name": "Salamanca",
+                "normalized_name": "salamanca"
+            },
+            {
+                "name": "Illapel",
+                "normalized_name": "illapel"
+            }
+        ]
+    },
+    {
+        "region_name": "Región de Antofagasta",
+        "normalized_name": "region de antofagasta",
+        "nro_region": 2,
+        "code_roman": "II",
+        "cities": [
+            {
+                "name": "Antofagasta",
+                "normalized_name": "antofagasta"
+            },
+            {
+                "name": "Calama",
+                "normalized_name": "calama"
+            },
+            {
+                "name": "Tocopilla",
+                "normalized_name": "tocopilla"
+            }
+        ]
+    },
+    {
+        "region_name": "Región de La Araucanía",
+        "normalized_name": "region de la araucania",
+        "nro_region": 9,
+        "code_roman": "IX",
+        "cities": [
+            {
+                "name": "Temuco",
+                "normalized_name": "temuco"
+            },
+            {
+                "name": "Padre Las Casas",
+                "normalized_name": "padre las casas"
+            },
+            {
+                "name": "Villarrica",
+                "normalized_name": "villarrica"
+            },
+            {
+                "name": "Angol",
+                "normalized_name": "angol"
+            },
+            {
+                "name": "Victoria",
+                "normalized_name": "victoria"
+            },
+            {
+                "name": "Lautaro",
+                "normalized_name": "lautaro"
+            },
+            {
+                "name": "Nueva Imperial",
+                "normalized_name": "nueva imperial"
+            },
+            {
+                "name": "Vilcún",
+                "normalized_name": "vilcun"
+            },
+            {
+                "name": "Carahue",
+                "normalized_name": "carahue"
+            },
+            {
+                "name": "Collipulli",
+                "normalized_name": "collipulli"
+            },
+            {
+                "name": "Freire",
+                "normalized_name": "freire"
+            },
+            {
+                "name": "Pitrufquén",
+                "normalized_name": "pitrufquen"
+            }
+        ]
+    },
+    {
+        "region_name": "Región de Los Lagos",
+        "normalized_name": "region de los lagos",
+        "nro_region": 10,
+        "code_roman": "X",
+        "cities": [
+            {
+                "name": "Osorno",
+                "normalized_name": "osorno"
+            },
+            {
+                "name": "Puerto Montt",
+                "normalized_name": "puerto montt"
+            },
+            {
+                "name": "Alerce",
+                "normalized_name": "alerce"
+            },
+            {
+                "name": "Ancud",
+                "normalized_name": "ancud"
+            },
+            {
+                "name": "Castro",
+                "normalized_name": "castro"
+            },
+            {
+                "name": "Puerto Varas",
+                "normalized_name": "puerto varas"
+            },
+            {
+                "name": "Quellón",
+                "normalized_name": "quellon"
+            },
+            {
+                "name": "Chaitén",
+                "normalized_name": "chaiten"
+            }
+        ]
+    },
+    {
+        "region_name": "Región del Maule",
+        "normalized_name": "region del maule",
+        "nro_region": 7,
+        "code_roman": "VII",
+        "cities": [
+            {
+                "name": "Talca",
+                "normalized_name": "talca"
+            },
+            {
+                "name": "Curicó",
+                "normalized_name": "curico"
+            },
+            {
+                "name": "Linares",
+                "normalized_name": "linares"
+            },
+            {
+                "name": "San Clemente",
+                "normalized_name": "san clemente"
+            },
+            {
+                "name": "Quella",
+                "normalized_name": "quella"
+            },
+            {
+                "name": "Constitución",
+                "normalized_name": "constitucion"
+            },
+            {
+                "name": "Cauquenes",
+                "normalized_name": "cauquenes"
+            },
+            {
+                "name": "Molina",
+                "normalized_name": "molina"
+            },
+            {
+                "name": "Parral",
+                "normalized_name": "parral"
+            },
+            {
+                "name": "Maule",
+                "normalized_name": "maule"
+            },
+            {
+                "name": "San Javier",
+                "normalized_name": "san javier"
+            },
+            {
+                "name": "Longaví",
+                "normalized_name": "longavi"
+            },
+            {
+                "name": "Teno",
+                "normalized_name": "teno"
+            }
+        ]
+    },
+    {
+        "region_name": "Región del Libertador General Bernardo O'Higgins",
+        "normalized_name": "region del libertador general bernardo ohiggins",
+        "nro_region": 6,
+        "code_roman": "VI",
+        "cities": [
+            {
+                "name": "Rancagua",
+                "normalized_name": "rancagua"
+            },
+            {
+                "name": "San Fernando",
+                "normalized_name": "san fernando"
+            },
+            {
+                "name": "Rengo",
+                "normalized_name": "rengo"
+            },
+            {
+                "name": "San Vicente de Tagua Tagua",
+                "normalized_name": "san vicente de tagua tagua"
+            },
+            {
+                "name": "Machalí",
+                "normalized_name": "machali"
+            },
+            {
+                "name": "Graneros",
+                "normalized_name": "graneros"
+            },
+            {
+                "name": "Santa Cruz",
+                "normalized_name": "santa cruz"
+            },
+            {
+                "name": "Chimbarongo",
+                "normalized_name": "chimbarongo"
+            },
+            {
+                "name": "Requínoa",
+                "normalized_name": "requinoa"
+            },
+            {
+                "name": "Las Cabras",
+                "normalized_name": "las cabras"
+            },
+            {
+                "name": "Pichilemu",
+                "normalized_name": "pichilemu"
+            }
+        ]
+    },
+    {
+        "region_name": "Región de Arica y Parinacota",
+        "normalized_name": "region de arica y parinacota",
+        "nro_region": 15,
+        "code_roman": "XV",
+        "cities": [
+            {
+                "name": "Arica",
+                "normalized_name": "arica"
+            },
+            {
+                "name": "Putre",
+                "normalized_name": "putre"
+            }
+        ]
+    },
+    {
+        "region_name": "Región de Tarapacá",
+        "normalized_name": "region de tarapaca",
+        "nro_region": 1,
+        "code_roman": "I",
+        "cities": [
+            {
+                "name": "Iquique",
+                "normalized_name": "iquique"
+            },
+            {
+                "name": "Alto Hospicio",
+                "normalized_name": "alto hospicio"
+            },
+            {
+                "name": "Pozo Almonte",
+                "normalized_name": "pozo almonte"
+            }
+        ]
+    },
+    {
+        "region_name": "Región de Ñuble",
+        "normalized_name": "region de nuble",
+        "nro_region": 16,
+        "code_roman": "XVI",
+        "cities": [
+            {
+                "name": "Chillán",
+                "normalized_name": "chillan"
+            },
+            {
+                "name": "Chillán Viejo",
+                "normalized_name": "chillan viejo"
+            },
+            {
+                "name": "Coihueco",
+                "normalized_name": "coihueco"
+            }
+        ]
+    },
+    {
+        "region_name": "Región de Atacama",
+        "normalized_name": "region de atacama",
+        "nro_region": 3,
+        "code_roman": "III",
+        "cities": [
+            {
+                "name": "Copiapó",
+                "normalized_name": "copiapo"
+            },
+            {
+                "name": "Vallenar",
+                "normalized_name": "vallenar"
+            },
+            {
+                "name": "Chañaral",
+                "normalized_name": "chanaral"
+            }
+        ]
+    },
+    {
+        "region_name": "Región de Los Ríos",
+        "normalized_name": "region de los rios",
+        "nro_region": 14,
+        "code_roman": "XIV",
+        "cities": [
+            {
+                "name": "Valdivia",
+                "normalized_name": "valdivia"
+            },
+            {
+                "name": "La Unión",
+                "normalized_name": "la union"
+            }
+        ]
+    },
+    {
+        "region_name": "Región de Magallanes y de la Antártica Chilena",
+        "normalized_name": "region de magallanes y de la antartica chilena",
+        "nro_region": 12,
+        "code_roman": "XII",
+        "cities": [
+            {
+                "name": "Punta Arenas",
+                "normalized_name": "punta arenas"
+            },
+            {
+                "name": "Puerto Natales",
+                "normalized_name": "puerto natales"
+            },
+            {
+                "name": "Porvenir",
+                "normalized_name": "porvenir"
+            },
+            {
+                "name": "Puerto Williams",
+                "normalized_name": "puerto williams"
+            }
+        ]
+    },
+    {
+        "region_name": "Región de Aysén del General Carlos Ibáñez del Campo",
+        "normalized_name": "region de aysen del general carlos ibanez del campo",
+        "nro_region": 11,
+        "code_roman": "XI",
+        "cities": [
+            {
+                "name": "Coyhaique",
+                "normalized_name": "coyhaique"
+            },
+            {
+                "name": "Puerto Aysén",
+                "normalized_name": "puerto aysen"
+            },
+            {
+                "name": "Chile Chico",
+                "normalized_name": "chile chico"
+            },
+            {
+                "name": "Cochrane",
+                "normalized_name": "cochrane"
+            }
+        ]
+    }
+]
