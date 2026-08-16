@@ -1,4 +1,4 @@
-package com.pelegrin.job_application_tracker.entity;
+package com.pelegrin.job_application_tracker.entity.users;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,8 +12,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "roles")
-public class Role {
+@Table(name = "permissions")
+public class Permission {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,11 +22,10 @@ public class Role {
     @Column(name = "name", nullable = false, unique = true)
     private String name;
 
-    protected Role() {
+    protected Permission() {
     }
 
-    public Role(String name) {
+    public Permission(String name) {
         this.name = name;
     }
-
 }

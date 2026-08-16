@@ -1,7 +1,9 @@
-package com.pelegrin.job_application_tracker.repository;
+package com.pelegrin.job_application_tracker.repository.users;
 
-import com.pelegrin.job_application_tracker.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.pelegrin.job_application_tracker.entity.users.User;
+
 import java.util.UUID;
 import java.util.Optional;
 
