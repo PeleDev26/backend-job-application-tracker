@@ -20,10 +20,10 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
-import lombok.Setter;
+// import lombok.Setter;
 
 @Getter
-@Setter
+// @Setter
 @Entity
 @Table(name = "roles")
 public class Role {
@@ -64,6 +64,21 @@ public class Role {
         );
 
         return authorities;
+    }
+
+    public void addPermission(Permission permission) {
+        if (permission == null) {
+            throw new IllegalArgumentException("Permission cannot be null");
+        }
+        permissions.add(permission);
+    }
+
+
+    public void removePermission(Permission permission) {
+        if (permission == null) {
+            throw new IllegalArgumentException("Permission cannot be null");
+        }
+        permissions.remove(permission);
     }
 
 }
