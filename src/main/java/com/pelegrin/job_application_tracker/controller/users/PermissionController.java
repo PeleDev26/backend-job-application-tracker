@@ -18,6 +18,7 @@ import com.pelegrin.job_application_tracker.dto.user.PermissionResponse;
 import com.pelegrin.job_application_tracker.service.users.PermissionService;
 
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotEmpty;
 
 @RestController
 @RequestMapping("/permissions")
@@ -40,8 +41,7 @@ public class PermissionController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ApiResponse<PermissionResponse>> getPermissionById(
-            @PathVariable Long id) {
+    public ResponseEntity<ApiResponse<PermissionResponse>> getPermissionById(@PathVariable Long id) {
 
         return ResponseEntity.ok(
                 ApiResponse.success(
@@ -51,8 +51,8 @@ public class PermissionController {
     }
 
     @PostMapping
-    public ResponseEntity<ApiResponse<PermissionResponse>> createPermission(@Valid
-            @RequestBody PermissionRequest request) {
+    public ResponseEntity<ApiResponse<PermissionResponse>> createPermission(
+            @Valid @RequestBody PermissionRequest request) {
 
         // System.out.println("POST /permissions -> " + request.name());
 
@@ -65,9 +65,20 @@ public class PermissionController {
                                 service.createPermission(request)));
     }
 
+    @PostMapping("/bulk")
+    public ResponseEntity<ApiResponse<List<PermissionResponse>>> bulkCreatePermissions(
+            @RequestBody @NotEmpty List<@Valid PermissionRequest> requests) {
+
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(
+                        ApiResponse.success(
+                                HttpStatus.CREATED.value(),
+                                "Permissions created succesfully",
+                                service.bulkCreatePermissions(requests)));
+    }
+
     @DeleteMapping("/{id}")
-    public ResponseEntity<ApiResponse<Void>> deletePermission(
-            @PathVariable Long id) {
+    public ResponseEntity<ApiResponse<Void>> deletePermission(@PathVariable Long id) {
 
         service.deletePermissionById(id);
 

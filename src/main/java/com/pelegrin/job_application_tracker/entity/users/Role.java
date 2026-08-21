@@ -4,11 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.HashSet;
 import java.util.Set;
-
-
-
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -36,11 +32,7 @@ public class Role {
     private String name;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-        name = "role_permissions",
-        joinColumns = @JoinColumn(name = "role_id"),
-        inverseJoinColumns = @JoinColumn(name = "permission_id")
-    )
+    @JoinTable(name = "role_permissions", joinColumns = @JoinColumn(name = "role_id"), inverseJoinColumns = @JoinColumn(name = "permission_id"))
     private Set<Permission> permissions = new HashSet<>();
 
     protected Role() {
@@ -50,31 +42,32 @@ public class Role {
         this.name = name;
     }
 
-    //Method
+    // Method
 
     public List<SimpleGrantedAuthority> getAuthorities() {
 
         var authorities = permissions
-            .stream()
-            .map(permission -> new SimpleGrantedAuthority(permission.getName()))
-            .collect(Collectors.toList());
+                .stream()
+                .map(permission -> new SimpleGrantedAuthority(permission.getName()))
+                .collect(Collectors.toList());
 
         authorities.add(
-            new SimpleGrantedAuthority("ROLE_" + this.name)
-        );
+                new SimpleGrantedAuthority("ROLE_" + this.name));
 
         return authorities;
     }
 
     public void addPermission(Permission permission) {
+
         if (permission == null) {
             throw new IllegalArgumentException("Permission cannot be null");
         }
+
         permissions.add(permission);
     }
 
-
     public void removePermission(Permission permission) {
+
         if (permission == null) {
             throw new IllegalArgumentException("Permission cannot be null");
         }

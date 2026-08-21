@@ -1,8 +1,8 @@
 package com.pelegrin.job_application_tracker.dto.user;
 
-import lombok.Getter;
+import jakarta.validation.constraints.NotBlank;
 
-@Getter
-public class RoleRequest {
-    private String name;
-}
+public record RoleRequest(
+
+    @NotBlank(message = "Role name cannot be blank") String name){}
+

@@ -12,12 +12,12 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-            .csrf(csrf -> csrf.disable()) // Temporal
-            .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/permissions/**").permitAll()
-                .anyRequest().authenticated()
-            );
+                .csrf(csrf -> csrf.disable()) // Temporal
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/permissions/**", "/roles/**").permitAll()
+                        .anyRequest().authenticated());
 
         return http.build();
     }
+
 }
