@@ -1,32 +1,29 @@
 package com.pelegrin.job_application_tracker.service.users;
 
 import java.util.List;
-
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-
 import com.pelegrin.job_application_tracker.dto.user.PermissionRequest;
 import com.pelegrin.job_application_tracker.dto.user.PermissionResponse;
 import com.pelegrin.job_application_tracker.entity.users.Permission;
-import com.pelegrin.job_application_tracker.exception.AppException;
 import com.pelegrin.job_application_tracker.repository.users.PermissionRepository;
+import com.pelegrin.job_application_tracker.validation.PermissionValidator;
 
 @Service
 public class PermissionService {
 
     private final PermissionRepository repository;
+    private final PermissionValidator validator;
 
-    public PermissionService(PermissionRepository repository) {
+    public PermissionService(PermissionRepository repository, PermissionValidator validator) {
         this.repository = repository;
+        this.validator = validator;
     }
 
     // methods
 
     public PermissionResponse createPermission(PermissionRequest request) {
 
-        if (repository.existsByName(request.name())) {
-            throw new AppException(HttpStatus.CONFLICT, "Permission already exists");
-        }
+        validator.validateNameNotExists(request.name());
 
         Permission permission = new Permission(request.name());
 
@@ -45,10 +42,7 @@ public class PermissionService {
 
     public PermissionResponse getPermissionById(Long id) {
 
-        Permission permission = repository.findById(id).orElseThrow(
-                () -> new AppException(
-                        HttpStatus.NOT_FOUND,
-                        "Permission not found"));
+        Permission permission = validator.findByIdOrThrow(id);
 
         return new PermissionResponse(
                 permission.getId(),
@@ -56,11 +50,7 @@ public class PermissionService {
     }
 
     public void deletePermissionById(Long id) {
-        if (!repository.existsById(id)) {
-            throw new AppException(
-                    HttpStatus.NOT_FOUND,
-                    "Permission does not exists");
-        }
+        validator.findByIdOrThrow(id);
 
         repository.deleteById(id);
     }
