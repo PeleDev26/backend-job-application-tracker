@@ -8,6 +8,8 @@ import com.pelegrin.job_application_tracker.entity.users.Role;
 import com.pelegrin.job_application_tracker.exception.AppException;
 import com.pelegrin.job_application_tracker.repository.users.RoleRepository;
 
+import static com.pelegrin.job_application_tracker.validation.ValidationUtils.validateNotExists;
+
 @Component
 public class RoleValidator {
 
@@ -17,12 +19,35 @@ public class RoleValidator {
         this.repository = repository;
     }
 
+    public void validateNameNotExists(String name) {
+        validateNotExists(
+                name,
+                repository::existsByName,
+                "Role name already exists");
+    }
+
+    public void validateCodeNotExists(String code) {
+        validateNotExists(
+                code,
+                repository::existsByCode,
+                "Role code already exists");
+    }
+
     public Role findByIdOrThrow(Long id) {
 
         return repository.findById(id).orElseThrow(
                 () -> new AppException(
                         HttpStatus.NOT_FOUND,
                         "Role not found"));
+    }
+
+    public Role findByCodeOrThrow(String code) {
+
+        return repository.findByCode(code)
+                .orElseThrow(
+                        () -> new AppException(
+                                HttpStatus.NOT_FOUND,
+                                "Role not found"));
     }
 
     public void validatePermissionNotAssigned(Role role, Permission permission) {

@@ -1,7 +1,5 @@
 package com.pelegrin.job_application_tracker.entity.users;
 
-import java.util.Objects;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

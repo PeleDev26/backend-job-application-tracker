@@ -28,6 +28,9 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "code", nullable = false, unique = true, updatable = false)
+    private String code;
+
     @Column(name = "name", nullable = false, unique = true)
     private String name;
 
@@ -38,7 +41,8 @@ public class Role {
     protected Role() {
     }
 
-    public Role(String name) {
+    public Role(String code, String name) {
+        this.code = code;
         this.name = name;
     }
 
@@ -52,7 +56,7 @@ public class Role {
                 .collect(Collectors.toList());
 
         authorities.add(
-                new SimpleGrantedAuthority("ROLE_" + this.name));
+                new SimpleGrantedAuthority("ROLE_" + this.code));
 
         return authorities;
     }

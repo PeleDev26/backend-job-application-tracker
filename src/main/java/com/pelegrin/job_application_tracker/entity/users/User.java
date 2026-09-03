@@ -97,6 +97,15 @@ public class User implements UserDetails {
 
     // Method
 
+    public void updateInfoUser(String firstName, String lastName, String phone, String email, Role role, City city) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.email = email;
+        this.role = role;
+        this.city = city;
+    }
+
     public void changePassword(String encodedPassword) {
         if (encodedPassword == null || encodedPassword.isBlank()) {
             throw new IllegalArgumentException("Encoded password cannot be null or blank");
@@ -106,34 +115,35 @@ public class User implements UserDetails {
     }
 
     public void deactivate() {
-         this.isActive = false;
+        this.isActive = false;
     }
 
-    public void activate() { 
-        this.isActive= true;
+    public void activate() {
+        this.isActive = true;
     }
+
 
     // ==============================
     // Spring Security - UserDetails
     // ==============================
 
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities (){
+    public Collection<? extends GrantedAuthority> getAuthorities() {
         return role.getAuthorities();
     }
 
     @Override
-    public String getPassword(){
+    public String getPassword() {
         return password;
     }
 
     @Override
-    public String getUsername(){
+    public String getUsername() {
         return email;
     }
 
     @Override
-    public boolean isAccountNonExpired(){
+    public boolean isAccountNonExpired() {
         return true;
     }
 
@@ -143,7 +153,7 @@ public class User implements UserDetails {
     }
 
     @Override
-    public boolean isCredentialsNonExpired(){
+    public boolean isCredentialsNonExpired() {
         return true;
     }
 

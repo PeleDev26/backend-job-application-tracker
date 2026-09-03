@@ -33,9 +33,7 @@ public class PermissionService {
         Permission permission = new Permission(request.name());
         Permission saved = repository.save(permission);
 
-        return new PermissionResponse(
-                saved.getId(),
-                saved.getName());
+        return new PermissionResponse(saved.getId(), saved.getName());
     }
 
     @Transactional
@@ -47,26 +45,27 @@ public class PermissionService {
                 request -> new Permission(request.name())).toList();
 
         return repository.saveAll(permissions)
-                .stream().map(
-                        permission -> new PermissionResponse(
-                                permission.getId(),
-                                permission.getName()))
+                .stream()
+                .map(permission -> new PermissionResponse(
+                        permission.getId(),
+                        permission.getName()))
                 .toList();
     }
 
     public List<PermissionResponse> getPermissions() {
-        return repository.findAll().stream().map(permission -> new PermissionResponse(
-                permission.getId(),
-                permission.getName())).toList();
+        return repository.findAll()
+                .stream()
+                .map(permission -> new PermissionResponse(
+                        permission.getId(),
+                        permission.getName()))
+                .toList();
     }
 
     public PermissionResponse getPermissionById(Long id) {
 
         Permission permission = validator.findByIdOrThrow(id);
 
-        return new PermissionResponse(
-                permission.getId(),
-                permission.getName());
+        return new PermissionResponse(permission.getId(), permission.getName());
     }
 
     public void deletePermissionById(Long id) {
@@ -75,8 +74,7 @@ public class PermissionService {
         try {
             repository.deleteById(id);
         } catch (DataIntegrityViolationException e) {
-            throw new AppException(
-                    HttpStatus.CONFLICT,
+            throw new AppException(HttpStatus.CONFLICT,
                     "Permission cannot be deleted because it is assigned to a role");
         }
     }

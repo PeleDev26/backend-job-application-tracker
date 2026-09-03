@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,28 +30,39 @@ public class RoleController {
         this.service = service;
     }
 
+    // ==========================================
+    // ADMIN -
+    // ==========================================
+
     @GetMapping
+    @PreAuthorize("hasAuthority('ROLE_READ')")
     public ResponseEntity<ApiResponse<List<RoleResponse>>> getAllRoles() {
 
         return ResponseEntity.ok(
-                ApiResponse.success(
-                        HttpStatus.OK.value(),
-                        "Roles retrieved successfully",
+                ApiResponse.success(HttpStatus.OK.value(), "Roles retrieved successfully",
                         service.getAllRoles()));
     }
 
+    // ==========================================
+    // ADMIN -
+    // ==========================================
+
     @GetMapping("/{id}")
+    @PreAuthorize("hasAuthority('ROLE_READ')")
     public ResponseEntity<ApiResponse<RoleResponse>> getRoleById(
             @PathVariable Long id) {
 
         return ResponseEntity.ok(
-                ApiResponse.success(
-                        HttpStatus.OK.value(),
-                        "Role retrieved successfully",
+                ApiResponse.success(HttpStatus.OK.value(), "Role retrieved successfully",
                         service.getRoleById(id)));
     }
 
+    // ==========================================
+    // ADMIN -
+    // ==========================================
+
     @PostMapping
+    @PreAuthorize("hasAuthority('ROLE_CREATE')")
     public ResponseEntity<ApiResponse<RoleResponse>> createRole(
             @Valid @RequestBody RoleRequest request) {
 
@@ -63,7 +75,12 @@ public class RoleController {
                                 service.createRole(request)));
     }
 
+    // ==========================================
+    // ADMIN -
+    // ==========================================
+
     @PostMapping("/{roleId}/permissions/{permissionId}")
+    @PreAuthorize("hasAuthority('ROLE_UPDATE')")
     public ResponseEntity<ApiResponse<RoleResponse>> addPermissionToRole(@PathVariable Long roleId,
             @PathVariable Long permissionId) {
 
@@ -72,7 +89,12 @@ public class RoleController {
                         service.addPermissionToRole(roleId, permissionId)));
     }
 
+    // ==========================================
+    // ADMIN -
+    // ==========================================
+
     @DeleteMapping("/{roleId}/permissions/{permissionId}")
+    @PreAuthorize("hasAuthority('ROLE_UPDATE')")
     public ResponseEntity<ApiResponse<RoleResponse>> removePermissionFromRole(
             @PathVariable Long roleId,
             @PathVariable Long permissionId) {
@@ -84,7 +106,12 @@ public class RoleController {
                         service.removePermissionFromRole(roleId, permissionId)));
     }
 
+    // ==========================================
+    // ADMIN -
+    // ==========================================
+
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasAuthority('ROLE_DELETE')")
     public ResponseEntity<ApiResponse<Void>> deleteRoleById(
             @PathVariable Long id) {
 

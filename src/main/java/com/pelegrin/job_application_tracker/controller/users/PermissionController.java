@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,6 +32,7 @@ public class PermissionController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('PERMISSION_READ')")
     public ResponseEntity<ApiResponse<List<PermissionResponse>>> getAllPermissions() {
 
         return ResponseEntity.ok(
@@ -41,6 +43,7 @@ public class PermissionController {
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasAuthority('PERMISSION_READ')")
     public ResponseEntity<ApiResponse<PermissionResponse>> getPermissionById(@PathVariable Long id) {
 
         return ResponseEntity.ok(
@@ -51,6 +54,7 @@ public class PermissionController {
     }
 
     @PostMapping
+    @PreAuthorize("hasAuthority('PERMISSION_CREATE')")
     public ResponseEntity<ApiResponse<PermissionResponse>> createPermission(
             @Valid @RequestBody PermissionRequest request) {
 
@@ -66,6 +70,7 @@ public class PermissionController {
     }
 
     @PostMapping("/bulk")
+    @PreAuthorize("hasAuthority('PERMISSION_CREATE')")
     public ResponseEntity<ApiResponse<List<PermissionResponse>>> bulkCreatePermissions(
             @RequestBody @NotEmpty List<@Valid PermissionRequest> requests) {
 
@@ -78,6 +83,7 @@ public class PermissionController {
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasAuthority('PERMISSION_DELETE')")
     public ResponseEntity<ApiResponse<Void>> deletePermission(@PathVariable Long id) {
 
         service.deletePermissionById(id);

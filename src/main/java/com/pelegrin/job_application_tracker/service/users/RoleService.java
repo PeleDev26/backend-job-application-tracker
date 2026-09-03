@@ -35,9 +35,10 @@ public class RoleService {
     }
 
     public RoleResponse createRole(RoleRequest request) {
+        validator.validateNameNotExists(request.name());
+        validator.validateCodeNotExists(request.code());
 
-        // implements validator
-        Role role = new Role(request.name());
+        Role role = new Role(request.code(), request.name());
         Role saved = repository.save(role);
 
         return mapper.toResponse(saved);
@@ -45,10 +46,7 @@ public class RoleService {
 
     public List<RoleResponse> getAllRoles() {
 
-        return repository.findAll()
-                .stream()
-                .map(mapper::toResponse)
-                .toList();
+        return repository.findAll().stream().map(mapper::toResponse).toList();
     }
 
     public RoleResponse getRoleById(Long id) {
@@ -64,9 +62,7 @@ public class RoleService {
         try {
             repository.deleteById(id);
         } catch (DataIntegrityViolationException e) {
-            throw new AppException(
-                    HttpStatus.CONFLICT,
-                    "Role cannot be deleted because it is assigned to a user");
+            throw new AppException(HttpStatus.CONFLICT, "Role cannot be deleted because it is assigned to a user");
         }
     }
 
@@ -77,20 +73,18 @@ public class RoleService {
         Permission permission = permissionValidator.findByIdOrThrow(permissionId);
 
         validator.validatePermissionNotAssigned(role, permission);
-
         role.addPermission(permission);
 
         return mapper.toResponse(role);
     }
 
     @Transactional
-    public RoleResponse removePermissionFromRole(Long roleId, Long permissionId){
-        
+    public RoleResponse removePermissionFromRole(Long roleId, Long permissionId) {
+
         Role role = validator.findByIdOrThrow(roleId);
         Permission permission = permissionValidator.findByIdOrThrow(permissionId);
 
         validator.validatePermissionAssigned(role, permission);
-
         role.removePermission(permission);
 
         return mapper.toResponse(role);

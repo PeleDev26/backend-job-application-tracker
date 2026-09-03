@@ -13,6 +13,7 @@ public class RoleMapper {
 
         return new RoleResponse(
                 role.getId(),
+                role.getCode(),
                 role.getName(),
                 role.getPermissions().stream().map(
                         permission -> new PermissionResponse(
